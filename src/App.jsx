@@ -1,21 +1,21 @@
-import './App.css'; // Pode manter ou ajustar conforme necessário
-import Menu from './components/Menu'; // Importa o novo componente Menu
+import './App.css';
+import Menu from './components/Menu'; 
+import HeroBanner from './components/HeroBanner';
 
 function App() {
-  // const [count, setCount] = useState(0) // Comentado ou removido
-
+  // O componente App é o ponto de entrada da aplicação
   return (
     <>
-      <Menu /> {/* Adiciona o componente Menu aqui */}
+      <Menu />
+      <HeroBanner />
 
-      {/* Conteúdo da página abaixo do menu */}
+      {/* Conteúdo da página abaixo do menu e do banner */}
       <div style={{ textAlign: 'center', padding: '2rem' }}>
-        <h1>Bem-vindo ao Mamamia Massas!</h1>
-        <p>
+        <p style={{ fontSize: '1.2em', color: '#333' }}>
           Navegue pelas opções do menu para descobrir nossos deliciosos pratos.
         </p>
+    
       </div>
- 
     </>
   );
 }
