@@ -1,0 +1,69 @@
+.menu-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333; /* Cor de fundo escura para o menu */
+  padding: 1rem 2rem; /* Espaçamento interno */
+  color: white; /* Cor do texto */
+  border-radius: 8px; /* Bordas arredondadas */
+  margin-bottom: 2rem; /* Margem inferior para separar do conteúdo */
+}
+
+.restaurant-name {
+  font-size: 1.8em; /* Tamanho da fonte para o nome do restaurante */
+  font-weight: bold; /* Negrito */
+  color: #ffeb3b; /* Uma cor de destaque, por exemplo, amarelo */
+}
+
+.menu-items {
+  list-style: none; /* Remove marcadores de lista */
+  display: flex; /* Alinha os itens horizontalmente */
+  margin: 0;
+  padding: 0;
+}
+
+.menu-items li {
+  margin-left: 25px; /* Espaçamento entre os itens do menu */
+}
+
+.menu-items li a {
+  color: white; /* Cor dos links */
+  text-decoration: none; /* Remove sublinhado dos links */
+  font-size: 1.1em; /* Tamanho da fonte dos itens do menu */
+  padding: 0.5em 0;
+  transition: color 0.3s ease;
+}
+
+.menu-items li a:hover,
+.menu-items li a:focus {
+  color: #ffeb3b; /* Cor ao passar o mouse ou focar */
+}
+
+/* Adaptação para telas menores (opcional) */
+@media (max-width: 768px) {
+  .menu-container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .restaurant-name {
+    margin-bottom: 1rem;
+    font-size: 1.5em;
+  }
+
+  .menu-items {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .menu-items li {
+    margin-left: 0;
+    text-align: center;
+    padding: 0.5rem 0;
+    border-top: 1px solid #444; /* Linha separadora em telas pequenas */
+  }
+
+  .menu-items li:first-child {
+    border-top: none;
+  }
+}
