@@ -38,3 +38,33 @@
 .molho-item:hover {
   background-color: #f0f0f0; /* Leve destaque ao passar o mouse */
 }
+
+/* Novos estilos para o modo compacto em src/components/Molhos.css */
+.molhos-compact-view {
+  margin-top: 0.75rem;
+  font-size: 0.9em;
+}
+
+.molhos-compact-title {
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+  color: #555; /* Cor para o título "Molhos Permitidos:" */
+}
+
+.molhos-compact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Coloca os molhos em linha */
+  flex-wrap: wrap; /* Permite que quebrem para a próxima linha */
+  gap: 6px; /* Espaçamento entre os itens de molho */
+}
+
+.molho-compact-item {
+  background-color: #f0f0f0; /* Fundo cinza claro para cada molho */
+  padding: 3px 8px;
+  border-radius: 12px; /* Formato de pílula */
+  font-size: 0.85em;
+  color: #333;
+  line-height: 1.4;
+}
