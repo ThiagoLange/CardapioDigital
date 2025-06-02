@@ -1,97 +1,72 @@
 /* src/components/Footer.css */
 .site-footer {
-  background-color: #2c2c2c; /* Um cinza bem escuro, quase preto */
-  color: #bcbcbc; /* Cinza claro para o texto */
+  background-color: #2c2c2c;
+  color: #bcbcbc;
   padding: 2.5rem 1.5rem;
-  margin-top: auto; /* Isso ajuda a empurrar o rodapé para baixo em layouts flex */
-  border-top: 4px solid #ffc107; /* Amarelo vibrante para o topo */
+  margin-top: auto; /* Ajuda a empurrar o rodapé para baixo em layouts flex */
+  border-top: 4px solid #ffc107;
   font-size: 0.9em;
   line-height: 1.6;
 }
 
 .footer-content-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; /* Espaça as seções de endereço e social */
-  align-items: flex-start;
-  gap: 2rem; /* Espaço entre as seções */
-  max-width: 1100px;
-  margin: 0 auto 2rem auto;
+  /* Este é o container para as seções "Visite-nos" e "Siga-nos" */
+  display: flex; /* Coloca os filhos (.footer-address, .footer-social-media) em linha */
+  flex-wrap: wrap; /* Permite que quebrem para a linha de baixo se não houver espaço */
+  justify-content: space-between; /* Em telas maiores, alinha "Visite-nos" à esquerda e "Siga-nos" à direita, com espaço entre eles */
+  align-items: flex-start; /* Alinha os itens no topo do container */
+  gap: 2rem; /* Espaço entre as seções se elas quebrarem ou se houver espaço extra */
+  max-width: 1100px; /* Define uma largura máxima para este bloco de conteúdo */
+  margin: 0 auto 2rem auto; /* CENTRALIZA o .footer-content-wrapper na tela (horizontalmente) e adiciona margem inferior.
 }
 
 .footer-address,
 .footer-social-media {
-  flex: 1;
-  min-width: 280px; /* Para não ficarem muito espremidas */
+  /* Estas são as duas colunas principais dentro do .footer-content-wrapper */
+  flex: 1; /* Permite que cada coluna cresça e ocupe o espaço disponível */
+  min-width: 280px; /* Garante uma largura mínima para que não fiquem muito espremidas */
   padding: 0 1rem;
+  
 }
 
-.footer-address h4,
-.footer-social-media h4 {
-  color: #ffffff; /* Títulos em branco */
-  font-size: 1.2em;
-  margin-bottom: 1rem;
-  font-family: 'Georgia', serif;
-  border-bottom: 1px solid #555;
-  padding-bottom: 0.5rem;
+.footer-social-media {
+
 }
 
-.footer-address p,
-.footer-social-media p {
-  margin-bottom: 0.6rem;
-}
-
-.footer-address strong {
-  color: #ffc107; /* Nome do restaurante em destaque */
-}
 
 .social-icons-container {
   margin-top: 0.5rem;
   display: flex;
-  gap: 0.8rem; /* Espaço entre os ícones */
-}
+  /* gap: 0.8rem; */ /* Espaço entre os ícones. Você pediu para aumentar, então pode ser 1.2rem ou mais */
+  gap: 1.2rem; /* Ajustado para mais espaço entre os ícones */
 
-.social-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  background-color: #444;
-  color: #ffc107; /* Ícone/letra em amarelo */
-  border-radius: 50%;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.2em;
-  transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
-}
-
-.social-icon:hover {
-  background-color: #ffc107; /* Fundo amarelo ao passar o mouse */
-  color: #2c2c2c; /* Letra/ícone escuro */
-  transform: translateY(-3px) scale(1.05);
 }
 
 .footer-copyright {
-  text-align: center;
+  /* Esta é a seção para o texto de copyright */
+  text-align: center; /* CENTRALIZA o texto do copyright. Requisito 3. */
   padding-top: 2rem;
   border-top: 1px solid #444;
   font-size: 0.85em;
   color: #888;
 }
 
+/* Adaptação para telas menores (responsividade) */
 @media (max-width: 768px) {
   .footer-content-wrapper {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    flex-direction: column; /* Empilha "Visite-nos" e "Siga-nos" */
+    align-items: center; /* Centraliza os blocos empilhados */
+    text-align: center; /* Centraliza o TEXTO DENTRO de "Visite-nos" e "Siga-nos" */
   }
-  .social-icons-container {
-    justify-content: center; /* Centraliza os ícones em telas menores */
-  }
+
   .footer-address,
   .footer-social-media {
-    width: 100%;
+    width: 100%; /* Faz cada seção ocupar a largura total no modo coluna */
     margin-bottom: 1.5rem;
+    /* text-align: center; já é aplicado pelo wrapper no mobile */
+  }
+
+  .social-icons-container {
+    justify-content: center; /* Centraliza os ícones de mídia social na visualização mobile */
   }
 }
