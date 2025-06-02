@@ -1,10 +1,12 @@
+// src/components/Menu.jsx
 import React from 'react';
+import PropTypes from 'prop-types'; // Importa PropTypes
 import './Menu.css';
 
 function Menu({ onNavigate, activeSection }) {
   const handleNavClick = (e, section) => {
     e.preventDefault();
-    onNavigate(section); // Chama a função passada pelo App para mudar a seção ativa
+    onNavigate(section);
   };
 
   return (
@@ -27,5 +29,11 @@ function Menu({ onNavigate, activeSection }) {
     </nav>
   );
 }
+
+// Define PropTypes
+Menu.propTypes = {
+  onNavigate: PropTypes.func.isRequired,
+  activeSection: PropTypes.string.isRequired,
+};
 
 export default Menu;

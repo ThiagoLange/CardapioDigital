@@ -1,8 +1,8 @@
 // src/components/Molhos.jsx
 import React from 'react';
-import './Molhos.css'; // Seus estilos existentes + novos para o modo compacto
+import PropTypes from 'prop-types'; // Importa PropTypes
+import './Molhos.css';
 
-// Lista de todos os molhos, pode ser exportada se necessário em outros lugares
 export const allSauceOptions = [
   "Alla Puttanesca",
   "Al Pesto di Basilico",
@@ -10,18 +10,17 @@ export const allSauceOptions = [
   "Alla Matriciana"
 ];
 
-function Molhos({ title, sauceList, compact = false }) {
-  const saucesToDisplay = sauceList || []; // Se sauceList não for fornecido, usa um array vazio
+function Molhos({ title, sauceList, compact }) {
+  const saucesToDisplay = sauceList && sauceList.length > 0 ? sauceList : (compact ? [] : allSauceOptions);
 
   if (saucesToDisplay.length === 0 && compact) {
-    return null; // Não renderiza nada no modo compacto se não houver molhos
+    return null; 
   }
   if (saucesToDisplay.length === 0 && !compact) {
-    return <p>Nenhum molho selecionado ou disponível.</p>;
+    return <p style={{textAlign: 'center', padding: '1rem'}}>Nenhum molho selecionado ou disponível no momento.</p>;
   }
 
   if (compact) {
-    // Modo compacto para ser usado dentro dos cards de massa
     return (
       <div className="molhos-compact-view">
         {title && <p className="molhos-compact-title">{title}</p>}
@@ -34,17 +33,30 @@ function Molhos({ title, sauceList, compact = false }) {
     );
   }
 
-  // Modo de exibição original/completo (como uma seção)
   return (
-    <div className="molhos-section"> {/* Mantém os estilos de .molhos-section */}
+    <div className="molhos-section">
       <h3>{title || "Opções de Molhos"}</h3>
-      <ul className="molhos-list"> {/* Mantém os estilos de .molhos-list */}
+      <ul className="molhos-list">
         {saucesToDisplay.map((molho, index) => (
-          <li key={index} className="molho-item">{molho}</li> 
+          <li key={index} className="molho-item">{molho}</li>
         ))}
       </ul>
     </div>
   );
 }
+
+// Define PropTypes
+Molhos.propTypes = {
+  title: PropTypes.string,
+  sauceList: PropTypes.arrayOf(PropTypes.string),
+  compact: PropTypes.bool,
+};
+
+// Define defaultProps para props opcionais
+Molhos.defaultProps = {
+  title: '',
+  sauceList: null, // Será tratado pela lógica do componente para usar allSauceOptions se !compact
+  compact: false,
+};
 
 export default Molhos;

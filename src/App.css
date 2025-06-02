@@ -1,8 +1,15 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* src/App.css */
+#root { /* Já existe e é ajustado em index.css para flex */
+  /* max-width: 1280px; /* Pode manter se desejar um container máximo geral */
+  /* margin: 0 auto; */ /* Pode manter */
+  /* padding: 2rem; */ /* Pode ser removido se o padding for controlado por seções */
+  /* text-align: center; */ /* Removido para não forçar centralização de tudo */
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ocupa no mínimo toda a altura da viewport */
 }
 
 .logo {
@@ -41,17 +48,17 @@
   color: #888;
 }
 
-/* Novos estilos para a seção de início */
+/* Estilos para a seção de início (movidos de App.jsx inline styles) */
 .inicio-section-content {
   text-align: center;
-  padding: 2rem; /* Mantém o padding que estava inline */
+  padding: 2rem;
 }
 
 .welcome-message {
-  font-size: 1.2em; /* Mantém o tamanho da fonte que estava inline */
-  color: #585858;   /* A cor mais clara que discutimos */
-  line-height: 1.6; /* Mantém a altura da linha que estava inline */
-  max-width: 600px; /* Opcional: Limita a largura para melhor leitura em telas grandes */
-  margin-left: auto; /* Opcional: Centraliza o parágrafo se max-width for usado */
-  margin-right: auto; /* Opcional: Centraliza o parágrafo se max-width for usado */
+  font-size: 1.2em;
+  color: #585858;   /* Cor mais clara */
+  line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
