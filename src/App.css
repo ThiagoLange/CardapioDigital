@@ -1,11 +1,4 @@
 /* src/App.css */
-#root { /* Já existe e é ajustado em index.css para flex */
-  /* max-width: 1280px; /* Pode manter se desejar um container máximo geral */
-  /* margin: 0 auto; */ /* Pode manter */
-  /* padding: 2rem; */ /* Pode ser removido se o padding for controlado por seções */
-  /* text-align: center; */ /* Removido para não forçar centralização de tudo */
-}
-
 .app-container {
   display: flex;
   flex-direction: column;
