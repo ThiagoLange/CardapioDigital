@@ -66,4 +66,10 @@
   .menu-items li:first-child {
     border-top: none;
   }
+
+  /* Em src/components/Menu.css */
+  .menu-items li.active-menu-item a {
+    color: #ffeb3b; /* Cor de destaque para o item ativo, igual ao hover/focus */
+    font-weight: bold;
+  }
 }

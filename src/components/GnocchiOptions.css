@@ -1,0 +1,87 @@
+.gnocchi-section {
+  padding: 2rem 1rem;
+  background-color: #fefcf9; /* Um fundo levemente off-white */
+  border-radius: 8px;
+  margin-top: 2rem; /* Espaçamento do HeroBanner ou Menu */
+  margin-bottom: 2rem;
+}
+
+.gnocchi-section h2 {
+  text-align: center;
+  font-size: 2.2em;
+  color: #4A2C2A; /* Marrom escuro consistente */
+  margin-bottom: 2.5rem;
+  font-family: 'Georgia', serif; /* Fonte elegante */
+}
+
+.gnocchi-cards-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Cria 2 colunas */
+  gap: 2rem; /* Espaço entre os cards */
+  max-width: 900px; /* Largura máxima para o container dos cards */
+  margin: 0 auto; /* Centraliza o container */
+}
+
+.gnocchi-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd; /* Borda sutil */
+  border-radius: 10px; /* Bordas mais arredondadas */
+  overflow: hidden; 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Sombra mais pronunciada */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.gnocchi-card:hover {
+  transform: translateY(-8px); /* Efeito de elevação ao passar o mouse */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.gnocchi-image {
+  width: 100%;
+  height: 220px; 
+  object-fit: cover; 
+}
+
+.gnocchi-info {
+  padding: 1.5rem;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.gnocchi-info h3 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 0.75rem;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.gnocchi-price {
+  font-size: 1.3em;
+  color: #704241; /* Cor de destaque para o preço */
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 700px) {
+  .gnocchi-cards-container {
+    grid-template-columns: 1fr; /* Empilha os cards em 1 coluna */
+  }
+
+  .gnocchi-section h2 {
+    font-size: 1.9em;
+  }
+
+  .gnocchi-info h3 {
+    font-size: 1.3em;
+  }
+
+  .gnocchi-price {
+    font-size: 1.1em;
+  }
+}
