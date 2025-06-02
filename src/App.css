@@ -40,3 +40,18 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Novos estilos para a seção de início */
+.inicio-section-content {
+  text-align: center;
+  padding: 2rem; /* Mantém o padding que estava inline */
+}
+
+.welcome-message {
+  font-size: 1.2em; /* Mantém o tamanho da fonte que estava inline */
+  color: #585858;   /* A cor mais clara que discutimos */
+  line-height: 1.6; /* Mantém a altura da linha que estava inline */
+  max-width: 600px; /* Opcional: Limita a largura para melhor leitura em telas grandes */
+  margin-left: auto; /* Opcional: Centraliza o parágrafo se max-width for usado */
+  margin-right: auto; /* Opcional: Centraliza o parágrafo se max-width for usado */
+}
